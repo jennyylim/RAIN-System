@@ -1,0 +1,7 @@
+{
+  "name": "Rain-App",
+  "description": "Cloud Resource Request / Deployment, A comprehensive IT Asset Management and Deployment System facilitating HR requests, IT inventory tracking, and employee asset handover with digital signatures.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

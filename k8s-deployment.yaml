@@ -1,0 +1,47 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rain-system
+  labels:
+    app: rain
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rain
+  template:
+    metadata:
+      labels:
+        app: rain
+    spec:
+      containers:
+      - name: rain-frontend
+        image: rainacr.azurecr.io/rain-system:latest
+        ports:
+        - containerPort: 80
+        env:
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: gemini-secrets
+              key: api-key
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rain-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: rain
