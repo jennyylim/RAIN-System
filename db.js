@@ -5,20 +5,21 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const config = {
-    user: process.env.DB_USER || 'rainadmin',
-    password: process.env.DB_PASSWORD || 'RainPassword123!',
-    server: process.env.DB_SERVER || 'rains.database.windows.net',
-    database: process.env.DB_NAME || 'rain_sql',
-    options: {
-        encrypt: true, // Required for Azure SQL
-        trustServerCertificate: false
-    },
-    pool: {
-        max: 10,
-        min: 0,
-        idleTimeoutMillis: 30000
-    }
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_SERVER,
+  database: process.env.DB_NAME,
+  options: {
+    encrypt: true,
+    trustServerCertificate: false
+  },
+  pool: {
+    max: 10,
+    min: 0,
+    idleTimeoutMillis: 30000
+  }
 };
+
 
 let poolPromise;
 
