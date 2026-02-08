@@ -1,27 +1,42 @@
-# RAIN - Resource Asset Inventory Network
+# RAIN – IT Asset Management System
 
-RAIN is an enterprise-grade IT Asset Management (ITAM) and Deployment system designed to bridge the gap between HR personnel requests and IT hardware logistics. It features a robust handover protocol with digital signatures, real-time inventory tracking, and a Gemini-powered "Genesis" engine for intelligent database management.
+## Overview
+RAIN is a web-based IT Asset Management system designed to track, manage, and organise organisational IT assets. The system emphasises secure data handling, clear workflows, and scalable cloud deployment using Microsoft Azure.
 
-## 🚀 Key Features
-
--   **IT BAU Portal**: Complete fleet control, inventory management, and fulfillment tracking.
--   **HR Admin Portal**: Seamless personnel onboarding/offboarding requests and stock decision handling.
--   **Employee Self-Service**: UAT (User Acceptance Testing) forms with digital signatures and photo evidence for asset custody.
--   **RAIN AI Genesis**: A Gemini-integrated engine that allows admins to provision database states and audit logs using natural language.
--   **Handover Record System**: Generates printable, high-fidelity PDF-ready handover receipts with witness sign-offs.
-
-## 🛠 Tech Stack
-
--   **Frontend**: React 19 (ESM), Tailwind CSS
--   **State Management**: LocalStorage-backed Persistent Ledger (Simulating a Production DB)
--   **AI Integration**: Google Gemini SDK (@google/genai)
--   **Icons**: FontAwesome 6 Pro
-
-## 📥 Setup
-
-1.  Clone the repository.
-2.  Set your `API_KEY` in the environment variables (for Gemini functionality).
-3.  Open `index.html` in a modern browser.
+This project is developed for academic and demonstration purposes and follows industry-aligned cloud and DevOps practices.
 
 ---
-*Developed by RAIN Systems Logistics Team.*
+
+## Cloud Architecture (Planned Deployment)
+RAIN is designed to be deployed on Microsoft Azure with the following architecture:
+
+- **Frontend**: Containerised web application
+- **Compute**: Azure Container Apps
+- **Database**: Azure SQL Database
+- **Storage**: Azure Blob Storage
+- **Secrets Management**: Azure Key Vault
+- **Container Registry**: Azure Container Registry
+- **CI/CD**: GitHub Actions
+- **Monitoring & Logging**: Azure Monitor and Log Analytics
+
+This architecture supports scalability, security, and maintainability.
+
+---
+
+## Project Structure
+/src Application source code
+/docs Architecture and design documentation
+/infra Infrastructure as Code (Azure)
+/.github CI/CD workflows
+
+---
+
+## Deployment Approach
+The application is containerised and deployed through an automated CI/CD pipeline. Builds are pushed to Azure Container Registry and deployed to Azure Container Apps. Configuration values and secrets are managed securely using Azure Key Vault.
+
+---
+
+## Notes
+- This repository represents the intended Azure deployment architecture.
+- Infrastructure and services may be refined during development.
+- All application logic is manually implemented using standard web technologies.
