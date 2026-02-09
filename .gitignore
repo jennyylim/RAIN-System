@@ -11,17 +11,4 @@ node_modules/
 
 # Build
 dist/
-build/
-
-# IDE
-.vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# OS
-.DS_Store
-Thumbs.db
+build/A
